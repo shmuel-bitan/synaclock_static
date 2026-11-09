@@ -24,9 +24,9 @@
     .day{font-weight:800;font-size:clamp(20px,1.7vw,28px);margin:1.1vh 0 .5vh;border-bottom:1px solid var(--line);padding-bottom:.5vh}
     .event{display:grid;grid-template-columns:5em minmax(0,1fr);gap:.25em .7em;padding:.55vh 0;border-bottom:1px solid #e9eff3;font-size:clamp(16px,1.25vw,22px)}
     .time{font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}.name{font-weight:650}.note{grid-column:2;color:var(--muted);font-size:.83em;font-style:italic}
-    .halakha{font-size:clamp(16px,1.3vw,22px);line-height:1.45;direction:rtl;text-align:right}.source{color:var(--muted);font-size:.82em;margin-top:.5vh}
-    .zmanim{display:flex;justify-content:space-around;gap:1vw;padding-top:1vh;border-top:1px solid var(--line)}.z{text-align:center}.z b{display:block;color:var(--blue);font-size:clamp(17px,1.35vw,24px)}.z span{font-size:clamp(11px,.85vw,15px);color:var(--muted);direction:rtl}
-    .slide{display:none;position:fixed;inset:0;z-index:5;background:#eef6fa;place-items:center;padding:4vh 5vw}.slide.on{display:grid}.slide img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:12px;box-shadow:0 8px 28px #173a5440}.slide-title{position:absolute;bottom:2vh;background:#fffffff0;padding:.7vh 1.2vw;border-radius:10px;font-size:clamp(16px,1.2vw,22px);color:var(--ink)}
+    .halakhot{display:grid;gap:.55vh;max-height:20vh;overflow:auto}.halakha-item{border-bottom:1px solid var(--line);padding-bottom:.45vh}.halakha-title{font-size:clamp(12px,.9vw,16px);font-weight:800;color:var(--blue)}.halakha-he{font-size:clamp(13px,1vw,17px);line-height:1.3;direction:rtl;text-align:right}.halakha-fr{font-size:clamp(11px,.78vw,14px);line-height:1.25;color:var(--ink);margin-top:.2vh}.source{color:var(--muted);font-size:clamp(9px,.62vw,11px);margin-top:.2vh}
+    .zmanim{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.45vw;padding-top:.7vh;border-top:1px solid var(--line)}.z-day{min-width:0;background:#fffffff0;border:1px solid var(--line);border-radius:10px;padding:.45vh .4vw}.z-day-title{text-align:center;font-weight:800;color:var(--blue);font-size:clamp(11px,.8vw,14px);margin-bottom:.35vh}.z-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.3vh .25vw}.z{text-align:center;min-width:0}.z b{display:block;color:var(--blue);font-size:clamp(12px,.9vw,16px)}.z span{font-size:clamp(8px,.58vw,10px);color:var(--muted);display:block;line-height:1.1}
+    .slide{display:none;position:fixed;inset:0;z-index:5;background:linear-gradient(#f4f9fc88,#f4f9fc88),url("./cfjt-background.jpg") center/cover;place-items:center;padding:4vh 5vw}.slide.on{display:grid}.slide img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:12px;box-shadow:0 8px 28px #173a5440}.slide-progress{position:absolute;left:0;right:0;top:0;height:6px;background:#ffffff88}.slide-progress-fill{height:100%;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left center}
     .status{position:fixed;right:12px;bottom:8px;color:#607b8c;font-size:11px;z-index:8}
     @media(max-width:800px){body{overflow:auto}.screen{height:auto;min-height:100%;grid-template-rows:auto auto auto}.body{grid-template-columns:1fr}.clock{font-size:15vw}.logo{width:40vw}.card{min-height:45vh}.right{grid-template-rows:auto auto}.poster{max-height:70vh}.zmanim{flex-wrap:wrap}}
   </style>
@@ -42,12 +42,12 @@
       <section class="card poster-card" id="posterCard"><div class="empty-poster">Affiche de Chabbat<br>à ajouter dans <b>content.json</b></div></section>
       <div class="right">
         <section class="card schedule"><div class="label">Programme de Chabbat</div><div id="events"></div></section>
-        <section class="card"><div class="label">Halakha du jour</div><div class="halakha" id="halakha">À compléter dans content.json.</div><div class="source" id="source"></div></section>
+        <section class="card"><div class="label">Halakhot de Hanouka · מנהג ספרד</div><div class="halakhot" id="halakhot">À compléter dans content.json.</div></section>
       </div>
     </div>
     <div class="zmanim" id="zmanim"></div>
   </main>
-  <div class="slide" id="slide"><img id="slideImage" alt=""><div class="slide-title" id="slideTitle"></div></div>
+  <div class="slide" id="slide"><img id="slideImage" alt=""><div class="slide-progress"><div class="slide-progress-fill" id="slideProgress"></div></div></div>
   <div class="status">Affichage de secours · données locales</div>
   <script>
     let zone='Europe/Paris';
@@ -57,9 +57,9 @@
       zone=d.timezone||'Europe/Paris';tick();
       if(d.posterUrl){const img=document.createElement('img');img.className='poster';img.src=d.posterUrl;img.alt='Affiche de Chabbat';document.querySelector('#posterCard').replaceChildren(img)}
       document.querySelector('#events').innerHTML=(d.events||[]).map(day=>`<div class="day">${esc(day.day)}</div>${(day.items||[]).map(e=>`<div class="event"><span class="time">${esc(e.time||'')}</span><span class="name">${esc(e.name)}</span>${e.note?`<span class="note">${esc(e.note)}</span>`:''}</div>`).join('')}`).join('')||'<div class="empty-poster">Programme à compléter dans content.json.</div>';
-      document.querySelector('#halakha').textContent=d.halakha||'À compléter dans content.json.';document.querySelector('#source').textContent=d.halakhaSource?'Source : '+d.halakhaSource:'';
-      document.querySelector('#zmanim').innerHTML=(d.zmanim||[]).map(z=>`<div class="z"><span>${esc(z.label)}</span><b>${esc(z.time)}</b></div>`).join('');
-      const slides=(d.slides||[]).filter(x=>x.url);if(slides.length){let i=0;const show=()=>{const x=slides[i%slides.length];i++;const duration=Math.max(5,Number(x.seconds)||8)*1000;document.querySelector('#slideImage').src=x.url;document.querySelector('#slideImage').alt=x.title||'';document.querySelector('#slideTitle').textContent=x.title||'';document.querySelector('#slide').classList.add('on');setTimeout(()=>{document.querySelector('#slide').classList.remove('on');setTimeout(show,1000)},duration)};setTimeout(show,30000)}
+      const halakhot=d.halakhot||[];document.querySelector('#halakhot').innerHTML=halakhot.map(h=>`<div class="halakha-item"><div class="halakha-title">${esc(h.titleHebrew)} · ${esc(h.titleFrench)}</div><div class="halakha-he">${esc(h.hebrew)}</div><div class="halakha-fr">${esc(h.french)}</div><div class="source">${esc(h.source||'')}</div></div>`).join('')||'À compléter dans content.json.';
+      document.querySelector('#zmanim').innerHTML=(d.zmanim||[]).map(day=>`<div class="z-day"><div class="z-day-title">${esc(day.day)}</div><div class="z-items">${(day.items||[]).map(z=>`<div class="z"><span>${esc(z.label)}</span><b>${esc(z.time)}</b></div>`).join('')}</div></div>`).join('');
+      const slides=(d.slides||[]).filter(x=>x.url);if(slides.length){let i=0;const show=()=>{const x=slides[i%slides.length];i++;const duration=Math.max(5,Number(x.seconds)||8)*1000;const img=document.querySelector('#slideImage');img.src=x.url;img.alt='';const bar=document.querySelector('#slideProgress');bar.style.transition='none';bar.style.transform='scaleX(0)';document.querySelector('#slide').classList.add('on');void bar.offsetWidth;bar.style.transition=`transform ${duration}ms linear`;bar.style.transform='scaleX(1)';setTimeout(()=>{document.querySelector('#slide').classList.remove('on');setTimeout(show,10000)},duration)};setTimeout(show,10000)}
     }
     tick();setInterval(tick,1000);
     fetch('./content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('content.json absent');return r.json()}).then(render).catch(()=>{document.querySelector('#events').innerHTML='<div class="empty-poster">Impossible de charger content.json.</div>'});

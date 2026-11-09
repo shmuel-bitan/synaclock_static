@@ -5,32 +5,212 @@
   "posterUrl": "",
   "halakha": "À compléter pour le Chabbat concerné.",
   "halakhaSource": "",
-  "zmanim": [],
+  "zmanim": [
+    {
+      "date": "2026-11-13",
+      "day": "Vendredi 13/11",
+      "items": [
+        {
+          "label": "Netz",
+          "time": "07:56"
+        },
+        {
+          "label": "Sof Shema · Gra",
+          "time": "10:16"
+        },
+        {
+          "label": "Sof Tefila · Gra",
+          "time": "11:02"
+        },
+        {
+          "label": "Plag HaMin'ha",
+          "time": "16:17"
+        },
+        {
+          "label": "Chekia",
+          "time": "17:15"
+        },
+        {
+          "label": "Tset · 7,083°",
+          "time": "17:56"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "day": "Samedi 14/11",
+      "items": [
+        {
+          "label": "Netz",
+          "time": "07:58"
+        },
+        {
+          "label": "Sof Shema · Gra",
+          "time": "10:17"
+        },
+        {
+          "label": "Sof Tefila · Gra",
+          "time": "11:03"
+        },
+        {
+          "label": "Plag HaMin'ha",
+          "time": "16:16"
+        },
+        {
+          "label": "Chekia",
+          "time": "17:14"
+        },
+        {
+          "label": "Tset · 7,083°",
+          "time": "17:55"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "day": "Dimanche 15/11",
+      "items": [
+        {
+          "label": "Netz",
+          "time": "07:59"
+        },
+        {
+          "label": "Sof Shema · Gra",
+          "time": "10:17"
+        },
+        {
+          "label": "Sof Tefila · Gra",
+          "time": "11:04"
+        },
+        {
+          "label": "Plag HaMin'ha",
+          "time": "16:15"
+        },
+        {
+          "label": "Chekia",
+          "time": "17:12"
+        },
+        {
+          "label": "Tset · 7,083°",
+          "time": "17:54"
+        }
+      ]
+    }
+  ],
   "events": [
     {
       "date": "2026-11-13",
       "day": "Vendredi 13 novembre",
       "items": [
-        {"time": "", "name": "Min'ha", "note": "Bar Yohai · Échet 'Hayil · Chir Hachirim · Arvit"}
+        {
+          "time": "16:40",
+          "name": "Entrée de Chabbat · bougies",
+          "note": ""
+        },
+        {
+          "time": "",
+          "name": "Min'ha",
+          "note": "Bar Yohai · Échet 'Hayil · Chir Hachirim · Arvit"
+        }
       ]
     },
     {
       "date": "2026-11-14",
       "day": "Samedi 14 novembre",
       "items": [
-        {"time": "", "name": "Cha'harit (Hodou)", "note": "Kiddouch à l'issue de l'office"},
-        {"time": "", "name": "Min'ha", "note": ""},
-        {"time": "", "name": "Séouda Chelichit", "note": "Cours Halakhot Olam"},
-        {"time": "", "name": "Arvit", "note": ""}
+        {
+          "time": "",
+          "name": "Cha'harit (Hodou)",
+          "note": "Kiddouch à l’issue de l’office"
+        },
+        {
+          "time": "",
+          "name": "Min'ha",
+          "note": ""
+        },
+        {
+          "time": "",
+          "name": "Séouda Chelichit",
+          "note": "Cours Halakhot Olam"
+        },
+        {
+          "time": "17:51",
+          "name": "Sortie de Chabbat",
+          "note": ""
+        },
+        {
+          "time": "",
+          "name": "Arvit",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "day": "Dimanche 15 novembre",
+      "items": [
+        {
+          "time": "10:00",
+          "name": "Keteub",
+          "note": ""
+        }
       ]
     }
   ],
   "slides": [
-    {"title": "Bâtisseurs", "url": "./images/slide-01.jpg", "seconds": 8},
-    {"title": "Keteub", "url": "./images/slide-02.png", "seconds": 8},
-    {"title": "Location de salles", "url": "./images/slide-03.png", "seconds": 8},
-    {"title": "Affiche 1", "url": "./images/slide-04.png", "seconds": 8},
-    {"title": "Affiche 2", "url": "./images/slide-05.png", "seconds": 8},
-    {"title": "Cérémonie Mémorial Shoah SHJT", "url": "./images/slide-06.png", "seconds": 8}
-  ]
+    {
+      "title": "Bâtisseurs",
+      "url": "./images/slide-01.jpg",
+      "seconds": 8
+    },
+    {
+      "title": "Keteub",
+      "url": "./images/slide-02.png",
+      "seconds": 8
+    },
+    {
+      "title": "Location de salles",
+      "url": "./images/slide-03.png",
+      "seconds": 8
+    },
+    {
+      "title": "Affiche 1",
+      "url": "./images/slide-04.png",
+      "seconds": 8
+    },
+    {
+      "title": "Affiche 2",
+      "url": "./images/slide-05.png",
+      "seconds": 8
+    },
+    {
+      "title": "Cérémonie Mémorial Shoah SHJT",
+      "url": "./images/slide-06.png",
+      "seconds": 8
+    }
+  ],
+  "halakhot": [
+    {
+      "titleHebrew": "נר איש וביתו",
+      "titleFrench": "Une hanoukia par foyer",
+      "hebrew": "למנהג הספרדים, אחד מבני הבית מדליק עבור כל בני הבית, ומוסיף נר בכל לילה: נר אחד בלילה הראשון, ושמונה בלילה האחרון.",
+      "french": "Selon le minhag séfarade courant, un membre du foyer allume pour toute la maison. On ajoute une bougie chaque soir : une la première nuit, huit la dernière.",
+      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעא · Yalkut Yosef, siman 671"
+    },
+    {
+      "titleHebrew": "זמן ההדלקה",
+      "titleFrench": "Quand allumer ?",
+      "hebrew": "לכתחילה מדליקים בצאת הכוכבים. יש להכין שמן או נרות שידלקו לפחות חצי שעה לאחר צאת הכוכבים. מי שלא הדליק בתחילת הלילה, מדליק בברכה כל הלילה עד עלות השחר.",
+      "french": "On allume idéalement à la sortie des étoiles. Les veilleuses doivent pouvoir brûler au moins une demi-heure après ce moment. Si l’on a manqué le début de la nuit, on peut encore allumer avec bénédiction jusqu’à l’aube.",
+      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעב א · Yalkut Yosef, siman 672:1"
+    },
+    {
+      "titleHebrew": "ערב שבת",
+      "titleFrench": "Vendredi, avant Chabbat",
+      "hebrew": "בערב שבת מדליקים תחילה נרות חנוכה ואחר כך נרות שבת. יש לשים מספיק שמן כדי שהנרות ימשיכו לדלוק לפחות חצי שעה לאחר צאת הכוכבים.",
+      "french": "Le vendredi, on allume d’abord les lumières de Hanouka, puis les bougies de Chabbat. Prévois assez d’huile pour que les lumières de Hanouka brûlent au moins une demi-heure après la tombée de la nuit.",
+      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעט · Yalkut Yosef, siman 679"
+    }
+  ],
+  "zmanimSource": "Calculs solaires pour Neuilly-sur-Seine; sof zman Shema/Tefila et Plag selon le Gra; Tset selon 7,083° (Hebcal). Heures arrondies à la minute."
 }

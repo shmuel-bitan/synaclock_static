@@ -5,7 +5,8 @@ Cette version est faite pour être publiée gratuitement avec **GitHub Pages**. 
 ## Ce que cette version fait
 
 - Affiche l’heure, la date civile et la date hébraïque, calculées dans le navigateur.
-- Affiche une affiche principale, le programme, la halakha, les horaires de zmanim et un carrousel d’images.
+- Affiche une affiche principale, le programme, trois halakhot bilingues, les zmanim et un carrousel d’images.
+- Les affiches du carrousel apparaissent sans titre superposé, sur le même fond que la page principale, avec une barre de progression dorée. La page principale reste affichée 10 secondes entre deux affiches.
 - Lit le contenu dans `content.json` et les images dans le dossier `images/`.
 - Ne contacte ni Firebase, ni Vercel, ni Cloudinary. Les horaires et affiches ne se mettent pas à jour seuls.
 
@@ -47,25 +48,34 @@ Pour changer de semaine, remplace les dates et les noms des jours dans `events`.
 
 ### Zmanim
 
-Remplace `"zmanim": []` par une liste d’horaires, par exemple :
+Les zmanim sont rangés par date dans `zmanim`. Chaque jour contient Netz, fin du temps du Shema, fin du temps de la Tefila, Plag, Chekia et Tset. Exemple :
 
 ```json
 "zmanim": [
-  {"label": "כניסת שבת", "time": "16:25"},
-  {"label": "רבנו תם", "time": "17:05"}
+  {
+    "date": "2026-11-13",
+    "day": "Vendredi 13/11",
+    "items": [
+      {"label": "Netz", "time": "07:56"},
+      {"label": "Sof Shema · Gra", "time": "10:16"},
+      {"label": "Sof Tefila · Gra", "time": "11:02"},
+      {"label": "Plag HaMin'ha", "time": "16:17"},
+      {"label": "Chekia", "time": "17:15"},
+      {"label": "Tset · 7,083°", "time": "17:56"}
+    ]
+  }
 ]
 ```
 
-Tu peux ajouter ou retirer des entrées en gardant le même format `label` / `time`.
+Garde ce format pour chaque date. Les horaires intégrés sont calculés pour Neuilly-sur-Seine, avec les temps du Gra et le Tset à 7,083° selon Hebcal. Les résultats peuvent varier d’une ou deux minutes selon la méthode et les coordonnées utilisées.
 
-### Halakha
+### Halakhot bilingues
 
-Modifie `halakha` pour le texte affiché, et `halakhaSource` pour sa source :
+Les textes sont dans `halakhot`. Pour modifier une règle, change ses champs `titleHebrew`, `titleFrench`, `hebrew`, `french` et `source`. Les trois présentes portent sur l’allumage familial, l’heure d’allumage et le vendredi de Hanouka.
 
-```json
-"halakha": "Texte de la halakha à afficher.",
-"halakhaSource": "Source ou référence"
-```
+## Contenu préparé pour ce Chabbat
+
+Le programme est daté du vendredi 13 au dimanche 15 novembre 2026. L’entrée à 16:40 et la sortie à 17:51 sont celles fournies pour le site. Hebcal publie pour Neuilly-sur-Seine 16:55 le vendredi 13 et 18:02 le samedi 14 ; vérifie quelle grille correspond à la synagogue avant publication.
 
 ## Ajouter ou remplacer une image
 
