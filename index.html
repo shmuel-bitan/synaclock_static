@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf4fa">
+  <title>SynaClock · Affichage de secours</title>
+  <style>
+    :root{--ink:#173a54;--blue:#0068b0;--muted:#607b8c;--gold:#bd8a32;--paper:#fffffff2;--line:#d4e3ec}
+    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:linear-gradient(#f4f9fc88,#f4f9fc88),url("./cfjt-background.jpg") center/cover fixed;overflow:hidden}
+    .screen{height:100%;padding:2vh 2.5vw;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:1.3vh}
+    header{display:grid;grid-template-columns:1fr 1.4fr 1fr;align-items:center;gap:1vw}
+    .logo-box{background:white;border-radius:12px;padding:.7vh .8vw;width:max-content;max-width:100%}
+    .logo{width:clamp(180px,21vw,310px);max-height:8vh;object-fit:contain;object-position:left center;display:block}
+    .clock{text-align:center;font-size:clamp(68px,8vw,126px);font-weight:300;letter-spacing:-.055em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+    .dates{text-align:right}.hebrew{font-size:clamp(22px,2vw,34px);direction:rtl;color:#084e79}.civil{font-size:clamp(15px,1.15vw,20px);color:var(--muted);margin-top:.4vh}
+    .body{display:grid;grid-template-columns:1.08fr .92fr;gap:1.3vw;min-height:0}
+    .card{min-width:0;min-height:0;position:relative;background:var(--paper);border:1px solid #e2d5b8;border-radius:20px;padding:1.7vh 1.5vw;box-shadow:0 5px 20px #173a5418;overflow:hidden}
+    .card:before{content:"";position:absolute;left:9px;top:9px;width:15px;height:15px;border-left:1px solid #bd8a3280;border-top:1px solid #bd8a3280;border-radius:5px 0 0}
+    .poster-card{display:grid;place-items:center;padding:1vh}.poster{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;border-radius:12px}.empty-poster{text-align:center;color:var(--muted);font-size:clamp(20px,2vw,30px);line-height:1.5;padding:2vw}
+    .right{display:grid;grid-template-rows:minmax(0,1fr) auto;gap:1.2vh;min-height:0}.schedule{overflow:auto}
+    .label{font-size:clamp(13px,.9vw,16px);font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1vh}
+    .day{font-weight:800;font-size:clamp(20px,1.7vw,28px);margin:1.1vh 0 .5vh;border-bottom:1px solid var(--line);padding-bottom:.5vh}
+    .event{display:grid;grid-template-columns:5em minmax(0,1fr);gap:.25em .7em;padding:.55vh 0;border-bottom:1px solid #e9eff3;font-size:clamp(16px,1.25vw,22px)}
+    .time{font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}.name{font-weight:650}.note{grid-column:2;color:var(--muted);font-size:.83em;font-style:italic}
+    .halakha{font-size:clamp(16px,1.3vw,22px);line-height:1.45;direction:rtl;text-align:right}.source{color:var(--muted);font-size:.82em;margin-top:.5vh}
+    .zmanim{display:flex;justify-content:space-around;gap:1vw;padding-top:1vh;border-top:1px solid var(--line)}.z{text-align:center}.z b{display:block;color:var(--blue);font-size:clamp(17px,1.35vw,24px)}.z span{font-size:clamp(11px,.85vw,15px);color:var(--muted);direction:rtl}
+    .slide{display:none;position:fixed;inset:0;z-index:5;background:#eef6fa;place-items:center;padding:4vh 5vw}.slide.on{display:grid}.slide img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:12px;box-shadow:0 8px 28px #173a5440}.slide-title{position:absolute;bottom:2vh;background:#fffffff0;padding:.7vh 1.2vw;border-radius:10px;font-size:clamp(16px,1.2vw,22px);color:var(--ink)}
+    .status{position:fixed;right:12px;bottom:8px;color:#607b8c;font-size:11px;z-index:8}
+    @media(max-width:800px){body{overflow:auto}.screen{height:auto;min-height:100%;grid-template-rows:auto auto auto}.body{grid-template-columns:1fr}.clock{font-size:15vw}.logo{width:40vw}.card{min-height:45vh}.right{grid-template-rows:auto auto}.poster{max-height:70vh}.zmanim{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <main class="screen">
+    <header>
+      <div class="logo-box"><img class="logo" src="./cfjt-logo.png" alt="Centre Français du Judaïsme Tunisien"></div>
+      <div class="clock" id="clock">--:--:--</div>
+      <div class="dates"><div class="hebrew" id="hebrew"></div><div class="civil" id="civil"></div></div>
+    </header>
+    <div class="body">
+      <section class="card poster-card" id="posterCard"><div class="empty-poster">Affiche de Chabbat<br>à ajouter dans <b>content.json</b></div></section>
+      <div class="right">
+        <section class="card schedule"><div class="label">Programme de Chabbat</div><div id="events"></div></section>
+        <section class="card"><div class="label">Halakha du jour</div><div class="halakha" id="halakha">À compléter dans content.json.</div><div class="source" id="source"></div></section>
+      </div>
+    </div>
+    <div class="zmanim" id="zmanim"></div>
+  </main>
+  <div class="slide" id="slide"><img id="slideImage" alt=""><div class="slide-title" id="slideTitle"></div></div>
+  <div class="status">Affichage de secours · données locales</div>
+  <script>
+    let zone='Europe/Paris';
+    const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function tick(){const n=new Date();document.querySelector('#clock').textContent=new Intl.DateTimeFormat('fr-FR',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(n);document.querySelector('#hebrew').textContent=new Intl.DateTimeFormat('he-IL-u-ca-hebrew',{timeZone:zone,day:'numeric',month:'long',year:'numeric'}).format(n);document.querySelector('#civil').textContent=new Intl.DateTimeFormat('fr-FR',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(n)}
+    function render(d){
+      zone=d.timezone||'Europe/Paris';tick();
+      if(d.posterUrl){const img=document.createElement('img');img.className='poster';img.src=d.posterUrl;img.alt='Affiche de Chabbat';document.querySelector('#posterCard').replaceChildren(img)}
+      document.querySelector('#events').innerHTML=(d.events||[]).map(day=>`<div class="day">${esc(day.day)}</div>${(day.items||[]).map(e=>`<div class="event"><span class="time">${esc(e.time||'')}</span><span class="name">${esc(e.name)}</span>${e.note?`<span class="note">${esc(e.note)}</span>`:''}</div>`).join('')}`).join('')||'<div class="empty-poster">Programme à compléter dans content.json.</div>';
+      document.querySelector('#halakha').textContent=d.halakha||'À compléter dans content.json.';document.querySelector('#source').textContent=d.halakhaSource?'Source : '+d.halakhaSource:'';
+      document.querySelector('#zmanim').innerHTML=(d.zmanim||[]).map(z=>`<div class="z"><span>${esc(z.label)}</span><b>${esc(z.time)}</b></div>`).join('');
+      const slides=(d.slides||[]).filter(x=>x.url);if(slides.length){let i=0;const show=()=>{const x=slides[i%slides.length];i++;const duration=Math.max(5,Number(x.seconds)||8)*1000;document.querySelector('#slideImage').src=x.url;document.querySelector('#slideImage').alt=x.title||'';document.querySelector('#slideTitle').textContent=x.title||'';document.querySelector('#slide').classList.add('on');setTimeout(()=>{document.querySelector('#slide').classList.remove('on');setTimeout(show,1000)},duration)};setTimeout(show,30000)}
+    }
+    tick();setInterval(tick,1000);
+    fetch('./content.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('content.json absent');return r.json()}).then(render).catch(()=>{document.querySelector('#events').innerHTML='<div class="empty-poster">Impossible de charger content.json.</div>'});
+  </script>
+</body>
+</html>

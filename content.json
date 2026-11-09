@@ -1,0 +1,36 @@
+{
+  "synagogue": "C.F.J.T. · Synagogue Rebbi Nathan Borgel",
+  "city": "Neuilly-sur-Seine",
+  "timezone": "Europe/Paris",
+  "posterUrl": "",
+  "halakha": "À compléter pour le Chabbat concerné.",
+  "halakhaSource": "",
+  "zmanim": [],
+  "events": [
+    {
+      "date": "2026-11-13",
+      "day": "Vendredi 13 novembre",
+      "items": [
+        {"time": "", "name": "Min'ha", "note": "Bar Yohai · Échet 'Hayil · Chir Hachirim · Arvit"}
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "day": "Samedi 14 novembre",
+      "items": [
+        {"time": "", "name": "Cha'harit (Hodou)", "note": "Kiddouch à l'issue de l'office"},
+        {"time": "", "name": "Min'ha", "note": ""},
+        {"time": "", "name": "Séouda Chelichit", "note": "Cours Halakhot Olam"},
+        {"time": "", "name": "Arvit", "note": ""}
+      ]
+    }
+  ],
+  "slides": [
+    {"title": "Bâtisseurs", "url": "./images/slide-01.jpg", "seconds": 8},
+    {"title": "Keteub", "url": "./images/slide-02.png", "seconds": 8},
+    {"title": "Location de salles", "url": "./images/slide-03.png", "seconds": 8},
+    {"title": "Affiche 1", "url": "./images/slide-04.png", "seconds": 8},
+    {"title": "Affiche 2", "url": "./images/slide-05.png", "seconds": 8},
+    {"title": "Cérémonie Mémorial Shoah SHJT", "url": "./images/slide-06.png", "seconds": 8}
+  ]
+}
