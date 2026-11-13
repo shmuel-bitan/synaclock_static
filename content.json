@@ -2,7 +2,7 @@
   "synagogue": "C.F.J.T. · Synagogue Rebbi Nathan Borgel",
   "city": "Neuilly-sur-Seine",
   "timezone": "Europe/Paris",
-  "posterUrl": "",
+  "posterUrl": "./images/chabbat.jpg",
   "halakha": "À compléter pour le Chabbat concerné.",
   "halakhaSource": "",
   "zmanim": [
@@ -159,6 +159,16 @@
   ],
   "slides": [
     {
+      "title": "histoire",
+      "url": "./images/slide-00.jpg",
+      "seconds": 8
+    },
+    {
+      "title": "Chabbat",
+      "url": "./images/chabbat.jpg",
+      "seconds": 8
+    },
+    {
       "title": "Bâtisseurs",
       "url": "./images/slide-01.jpg",
       "seconds": 8
@@ -185,9 +195,15 @@
     },
     {
       "title": "Cérémonie Mémorial Shoah SHJT",
-      "url": "./images/slide-06.png",
+      "url": "./images/slide-06.jpg",
+      "seconds": 8
+    },
+    {
+      "title": "histoire",
+      "url": "./images/slide-07.jpg",
       "seconds": 8
     }
+    
   ],
   "halakhot": [
     {
@@ -195,21 +211,24 @@
       "titleFrench": "Une hanoukia par foyer",
       "hebrew": "למנהג הספרדים, אחד מבני הבית מדליק עבור כל בני הבית, ומוסיף נר בכל לילה: נר אחד בלילה הראשון, ושמונה בלילה האחרון.",
       "french": "Selon le minhag séfarade courant, un membre du foyer allume pour toute la maison. On ajoute une bougie chaque soir : une la première nuit, huit la dernière.",
-      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעא · Yalkut Yosef, siman 671"
+      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעא · Yalkut Yosef, siman 671",
+      "day": "Vendredi"
     },
     {
       "titleHebrew": "זמן ההדלקה",
       "titleFrench": "Quand allumer ?",
       "hebrew": "לכתחילה מדליקים בצאת הכוכבים. יש להכין שמן או נרות שידלקו לפחות חצי שעה לאחר צאת הכוכבים. מי שלא הדליק בתחילת הלילה, מדליק בברכה כל הלילה עד עלות השחר.",
       "french": "On allume idéalement à la sortie des étoiles. Les veilleuses doivent pouvoir brûler au moins une demi-heure après ce moment. Si l’on a manqué le début de la nuit, on peut encore allumer avec bénédiction jusqu’à l’aube.",
-      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעב א · Yalkut Yosef, siman 672:1"
+      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעב א · Yalkut Yosef, siman 672:1",
+      "day": "Samedi"
     },
     {
       "titleHebrew": "ערב שבת",
       "titleFrench": "Vendredi, avant Chabbat",
       "hebrew": "בערב שבת מדליקים תחילה נרות חנוכה ואחר כך נרות שבת. יש לשים מספיק שמן כדי שהנרות ימשיכו לדלוק לפחות חצי שעה לאחר צאת הכוכבים.",
       "french": "Le vendredi, on allume d’abord les lumières de Hanouka, puis les bougies de Chabbat. Prévois assez d’huile pour que les lumières de Hanouka brûlent au moins une demi-heure après la tombée de la nuit.",
-      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעט · Yalkut Yosef, siman 679"
+      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעט · Yalkut Yosef, siman 679",
+      "day": "Dimanche"
     }
   ],
   "zmanimSource": "Calculs solaires pour Neuilly-sur-Seine; sof zman Shema/Tefila et Plag selon le Gra; Tset selon 7,083° (Hebcal). Heures arrondies à la minute."
