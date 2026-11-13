@@ -61,7 +61,7 @@
           "time": "17:14"
         },
         {
-          "label": "Tset · 7,083°",
+          "label": "Tset Hakokhavim",
           "time": "17:55"
         }
       ]
@@ -161,47 +161,42 @@
     {
       "title": "histoire",
       "url": "./images/slide-00.jpg",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "Chabbat",
       "url": "./images/chabbat.jpg",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "Bâtisseurs",
       "url": "./images/slide-01.jpg",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "Keteub",
       "url": "./images/slide-02.png",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "Location de salles",
       "url": "./images/slide-03.png",
-      "seconds": 8
-    },
-    {
-      "title": "Affiche 1",
-      "url": "./images/slide-04.png",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "Affiche 2",
       "url": "./images/slide-05.png",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "Cérémonie Mémorial Shoah SHJT",
       "url": "./images/slide-06.jpg",
-      "seconds": 8
+      "seconds": 5
     },
     {
       "title": "histoire",
       "url": "./images/slide-07.jpg",
-      "seconds": 8
+      "seconds": 5
     }
     
   ],
