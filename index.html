@@ -55,13 +55,29 @@
     let zone='Europe/Paris',slides=[],slideIndex=0,cycleTimer=null,progressFrame=0;
     const $=s=>document.querySelector(s);
     const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    function tick(){const n=new Date();$('#clock').textContent=new Intl.DateTimeFormat('fr-FR',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(n);$('#hebrew').textContent=new Intl.DateTimeFormat('he-IL-u-ca-hebrew',{timeZone:zone,day:'numeric',month:'long',year:'numeric'}).format(n);$('#civil').textContent=new Intl.DateTimeFormat('fr-FR',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(n)}
+    function hebrewDayNumber(value){
+      const digits=String(value).replace(/[٠-٩]/g,d=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(d))).replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+      const n=Number.parseInt(digits,10);if(!Number.isFinite(n)||n<1||n>30)return value;
+      const ones=['','א','ב','ג','ד','ה','ו','ז','ח','ט'],tens=['','י','כ','ל'];
+      let letters=n===15?'טו':n===16?'טז':tens[Math.floor(n/10)]+ones[n%10];
+      return letters.length===1?letters+'׳':letters.slice(0,-1)+'״'+letters.slice(-1);
+    }
+    function tick(){const n=new Date();$('#clock').textContent=new Intl.DateTimeFormat('fr-FR',{timeZone:zone,hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).format(n);const hf=new Intl.DateTimeFormat('he-IL-u-ca-hebrew',{timeZone:zone,day:'numeric',month:'long',year:'numeric'});$('#hebrew').textContent=hf.formatToParts(n).map(p=>p.type==='day'?hebrewDayNumber(p.value):p.value).join('');$('#civil').textContent=new Intl.DateTimeFormat('fr-FR',{timeZone:zone,weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(n)}
     function startProgress(seconds){cancelAnimationFrame(progressFrame);const bar=$('#progressFill');bar.style.transition='none';bar.style.width='0%';if(!seconds)return;const start=performance.now(),duration=seconds*1000;function step(now){const p=Math.min(1,(now-start)/duration);bar.style.width=(p*100)+'%';if(p<1)progressFrame=requestAnimationFrame(step)}progressFrame=requestAnimationFrame(step)}
     function scheduleMain(){clearTimeout(cycleTimer);$('#slide').classList.remove('on');startProgress(10);if(slides.length)cycleTimer=setTimeout(showSlide,10000)}
-    function showSlide(){if(!slides.length)return scheduleMain();const x=slides[slideIndex++%slides.length],seconds=Math.max(5,Number(x.seconds)||8),img=$('#slideImage');img.src=x.url;img.alt=x.title||'Affiche';$('#slide').classList.add('on');startProgress(seconds);cycleTimer=setTimeout(scheduleMain,seconds*1000)}
+    function showSlide(){
+      if(!slides.length)return scheduleMain();
+      const x=slides[slideIndex++%slides.length],seconds=Math.max(15,Number(x.seconds)||15),img=$('#slideImage');
+      clearTimeout(cycleTimer);$('#slide').classList.remove('on');
+      img.onload=()=>{img.onload=null;img.onerror=null;$('#slide').classList.add('on');startProgress(seconds);cycleTimer=setTimeout(scheduleMain,seconds*1000)};
+      img.onerror=()=>{img.onload=null;img.onerror=null;cycleTimer=setTimeout(showSlide,1000)};
+      img.alt=x.title||'Affiche';img.src=x.url;
+      if(img.complete&&img.naturalWidth)img.onload();
+    }
     function render(d){
       zone=d.timezone||'Europe/Paris';tick();
-      if(d.posterUrl){const img=document.createElement('img');img.className='poster';img.src=d.posterUrl;img.alt='Affiche de Chabbat';$('#posterCard').replaceChildren(img)}
+      const posterSource=d.posterUrl||(typeof d.poster==='string'?d.poster:(d.poster?.url||d.poster?.src))||d.posterImage||'';
+      if(posterSource){const img=document.createElement('img');img.className='poster';img.src=new URL(posterSource,document.baseURI).href;img.alt='Affiche de Chabbat';img.onerror=()=>{$('#posterCard').innerHTML='<div class=\"empty-poster\">Affiche introuvable.<br>Vérifie le chemin <b>posterUrl</b> dans <b>content.json</b>.</div>'};$('#posterCard').replaceChildren(img)}
       $('#events').innerHTML=(d.events||[]).map(day=>`<div class="day">${esc(day.day)}</div>${(day.items||[]).map(e=>`<div class="event"><span class="time">${esc(e.time||'')}</span><span class="name">${esc(e.name)}</span>${e.note?`<span class="note">${esc(e.note)}</span>`:''}</div>`).join('')}`).join('')||'<div class="empty-poster">Programme à compléter dans content.json.</div>';
       const fridayHalakhot=(d.halakhot||[]).filter(h=>/vendredi/i.test(h.day||''));
       $('#halakhot').innerHTML=fridayHalakhot.map(h=>`<div class="halakha-item"><div class="halakha-title">${esc(h.titleHebrew)} · ${esc(h.titleFrench)}</div><div class="halakha-he">${esc(h.hebrew)}</div><div class="halakha-fr">${esc(h.french)}</div><div class="source">${esc(h.source||'')}</div></div>`).join('')||'À compléter dans content.json.';
