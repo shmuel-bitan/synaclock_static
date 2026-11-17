@@ -103,12 +103,12 @@
       "day": "Vendredi 20 novembre",
       "items": [
         {
-          "time": "16:47",
+          "time": "16:46",
           "name": "Entrée de Chabbat · bougies",
           "note": ""
         },
         {
-          "time": "16:45",
+          "time": "16:30",
           "name": "Min'ha",
           "note": "Bar Yohai · Échet 'Hayil · Chir Hachirim · Arvit"
         }
@@ -131,7 +131,7 @@
         {
           "time": "16:45",
           "name": "Séouda Chelichit",
-          "note": "Cours de Halikhot Olam"
+          "note": "Cours du rav brahmi"
         },
         {
           "time": "17:56",
@@ -141,7 +141,7 @@
         {
           "time": "17:56",
           "name": "Arvit",
-          "note": ""
+          "note": "suivi de levana si visible"
         }
       ]
     },
@@ -196,6 +196,11 @@
     {
       "title": "histoire",
       "url": "./images/slide-07.jpg",
+      "seconds": 5
+    },
+    {
+      "title": "livre",
+      "url": "./images/slide-08.jpg",
       "seconds": 5
     }
   ],
