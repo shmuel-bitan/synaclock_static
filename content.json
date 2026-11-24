@@ -7,100 +7,46 @@
   "halakhaSource": "Yalkut Yosef, Hilkhot Hanouka, simanim 671, 672 et 679; pratiques séfarades courantes.",
   "zmanim": [
     {
-      "date": "2026-11-20",
-      "day": "Vendredi 20/11",
+      "date": "2026-11-27",
+      "day": "Vendredi 27/11",
       "items": [
-        {
-          "label": "Netz",
-          "time": "08:07"
-        },
-        {
-          "label": "Sof Shema · Gra",
-          "time": "10:21"
-        },
-        {
-          "label": "Sof Tefila · Gra",
-          "time": "11:06"
-        },
-        {
-          "label": "Plag HaMin'ha",
-          "time": "16:09"
-        },
-        {
-          "label": "Chekia",
-          "time": "17:05"
-        },
-        {
-          "label": "Tset · 7,083°",
-          "time": "17:46"
-        }
+        { "label": "Netz", "time": "08:18" },
+        { "label": "Sof Shema · Gra", "time": "10:28" },
+        { "label": "Sof Tefila · Gra", "time": "11:11" },
+        { "label": "Plag HaMin'ha", "time": "16:05" },
+        { "label": "Chekia", "time": "16:59" },
+        { "label": "Tset · 7,083°", "time": "17:42" }
       ]
     },
     {
-      "date": "2026-11-21",
-      "day": "Samedi 21/11",
+      "date": "2026-11-28",
+      "day": "Samedi 28/11",
       "items": [
-        {
-          "label": "Netz",
-          "time": "08:08"
-        },
-        {
-          "label": "Sof Shema · Gra",
-          "time": "10:22"
-        },
-        {
-          "label": "Sof Tefila · Gra",
-          "time": "11:07"
-        },
-        {
-          "label": "Plag HaMin'ha",
-          "time": "16:08"
-        },
-        {
-          "label": "Chekia",
-          "time": "17:04"
-        },
-        {
-          "label": "Tset · 7,083°",
-          "time": "17:45"
-        }
+        { "label": "Netz", "time": "08:19" },
+        { "label": "Sof Shema · Gra", "time": "10:29" },
+        { "label": "Sof Tefila · Gra", "time": "11:12" },
+        { "label": "Plag HaMin'ha", "time": "16:04" },
+        { "label": "Chekia", "time": "16:58" },
+        { "label": "Tset · 7,083°", "time": "17:42" }
       ]
     },
     {
-      "date": "2026-11-22",
-      "day": "Dimanche 22/11",
+      "date": "2026-11-29",
+      "day": "Dimanche 29/11",
       "items": [
-        {
-          "label": "Netz",
-          "time": "08:10"
-        },
-        {
-          "label": "Sof Shema · Gra",
-          "time": "10:24"
-        },
-        {
-          "label": "Sof Tefila · Gra",
-          "time": "11:08"
-        },
-        {
-          "label": "Plag HaMin'ha",
-          "time": "16:07"
-        },
-        {
-          "label": "Chekia",
-          "time": "17:03"
-        },
-        {
-          "label": "Tset · 7,083°",
-          "time": "17:44"
-        }
+        { "label": "Netz", "time": "08:20" },
+        { "label": "Sof Shema · Gra", "time": "10:30" },
+        { "label": "Sof Tefila · Gra", "time": "11:13" },
+        { "label": "Plag HaMin'ha", "time": "16:04" },
+        { "label": "Chekia", "time": "16:58" },
+        { "label": "Tset · 7,083°", "time": "17:41" }
       ]
     }
   ],
   "events": [
     {
-      "date": "2026-11-20",
-      "day": "Vendredi 20 novembre",
+      "date": "2026-11-27",
+      "day": "Vendredi 27 novembre",
       "items": [
         {
           "time": "16:46",
@@ -115,8 +61,8 @@
       ]
     },
     {
-      "date": "2026-11-21",
-      "day": "Samedi 21 novembre",
+      "date": "2026-11-28",
+      "day": "Samedi 28 novembre",
       "items": [
         {
           "time": "09:00",
@@ -146,8 +92,8 @@
       ]
     },
     {
-      "date": "2026-11-22",
-      "day": "Dimanche 22 novembre",
+      "date": "2026-11-29",
+      "day": "Dimanche 29 novembre",
       "items": [
         {
           "time": "10:00",
@@ -158,77 +104,41 @@
     }
   ],
   "slides": [
-    {
-      "title": "histoire",
-      "url": "./images/slide-00.jpg",
-      "seconds": 5
-    },
-    {
-      "title": "Chabbat",
-      "url": "./images/chabbat.jpg",
-      "seconds": 5
-    },
-    {
-      "title": "Bâtisseurs",
-      "url": "./images/slide-01.jpg",
-      "seconds": 5
-    },
-    {
-      "title": "Keteub",
-      "url": "./images/slide-02.png",
-      "seconds": 5
-    },
-    {
-      "title": "Location de salles",
-      "url": "./images/slide-03.png",
-      "seconds": 5
-    },
-    {
-      "title": "Affiche 2",
-      "url": "./images/slide-05.png",
-      "seconds": 5
-    },
-    {
-      "title": "Cérémonie Mémorial Shoah SHJT",
-      "url": "./images/slide-06.jpg",
-      "seconds": 5
-    },
-    {
-      "title": "histoire",
-      "url": "./images/slide-07.jpg",
-      "seconds": 5
-    },
-    {
-      "title": "livre",
-      "url": "./images/slide-08.jpg",
-      "seconds": 5
-    }
+    { "title": "histoire", "url": "./images/slide-00.jpg", "seconds": 5 },
+    { "title": "Chabbat", "url": "./images/chabbat.jpg", "seconds": 5 },
+    { "title": "Bâtisseurs", "url": "./images/slide-01.jpg", "seconds": 5 },
+    { "title": "Keteub", "url": "./images/slide-02.png", "seconds": 5 },
+    { "title": "Location de salles", "url": "./images/slide-03.png", "seconds": 5 },
+    { "title": "Affiche 2", "url": "./images/slide-05.png", "seconds": 5 },
+    { "title": "Cérémonie Mémorial Shoah SHJT", "url": "./images/slide-06.jpg", "seconds": 5 },
+    { "title": "histoire", "url": "./images/slide-07.jpg", "seconds": 5 },
+    { "title": "livre", "url": "./images/slide-08.jpg", "seconds": 5 }
   ],
   "halakhot": [
     {
       "titleHebrew": "נר איש וביתו",
       "titleFrench": "Une hanoukia pour le foyer",
       "hebrew": "למנהג רוב הספרדים, אחד מבני הבית מדליק עבור כל בני הבית, ומוסיף נר בכל לילה: אחד בלילה הראשון ושמונה בלילה האחרון.",
-      "french": "Selon le minhag de la majorité des Séfarades, une personne allume pour tout le foyer. On ajoute une lumière chaque soir : une la première nuit, huit la dernière.",
-      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעא · Yalkut Yosef, siman 671",
+      "french": "Selon le minhag séfarade courant, une personne allume pour tout le foyer. On ajoute une lumière chaque soir : une la première nuit, puis une de plus chaque soir, jusqu’à huit.",
+      "source": "Yalkut Yosef, Hilkhot Hanouka, siman 671",
       "day": "Vendredi"
     },
     {
       "titleHebrew": "שמן שידלק חצי שעה",
       "titleFrench": "Prévoir assez d’huile ou de cire",
-      "hebrew": "יש לתת שמן או נרות שידלקו לפחות חצי שעה לאחר צאת הכוכבים. בערב שבת של חנוכה מדליקים נרות חנוכה לפני נרות שבת, ויש להקפיד על כמות שמן מספקת.",
-      "french": "Prévois assez d’huile ou des bougies pour que les lumières brûlent au moins une demi-heure après la tombée de la nuit. Le vendredi de Hanouka, on allume d’abord les lumières de Hanouka, puis les bougies de Chabbat.",
-      "source": "ילקוט יוסף, הלכות חנוכה, סימנים תרעב ותרעט · Yalkut Yosef, simanim 672 et 679",
+      "hebrew": "יש להכין שמן או נרות שידלקו לפחות חצי שעה לאחר צאת הכוכבים. בערב שבת של חנוכה מדליקים נרות חנוכה לפני נרות שבת.",
+      "french": "Prépare assez d’huile ou des bougies pour que les lumières brûlent au moins une demi-heure après la tombée de la nuit. Un vendredi de Hanouka, on allume d’abord la hanoukia, puis les bougies de Chabbat.",
+      "source": "Yalkut Yosef, Hilkhot Hanouka, simanim 672 et 679",
       "day": "Samedi"
     },
     {
       "titleHebrew": "ברכות ההדלקה",
       "titleFrench": "Les bénédictions de l’allumage",
       "hebrew": "בלילה הראשון מברכים שלוש ברכות: להדליק נר חנוכה, שעשה נסים ושהחיינו. בשאר הלילות מברכים שתי ברכות: להדליק נר חנוכה ושעשה נסים.",
-      "french": "La première nuit, on récite trois bénédictions : l’allumage, les miracles et Chéhé’héyanou. Les autres nuits, on récite les deux premières : l’allumage et les miracles.",
-      "source": "ילקוט יוסף, הלכות חנוכה, סימן תרעו · Yalkut Yosef, siman 676",
+      "french": "La première nuit, on récite trois bénédictions : l’allumage, les miracles et Chéhé’héyanou. Les autres soirs, on récite les deux premières : l’allumage et les miracles.",
+      "source": "Yalkut Yosef, Hilkhot Hanouka, siman 676",
       "day": "Dimanche"
     }
   ],
-  "zmanimSource": "Neuilly-sur-Seine; Netz, lever/coucher et Tset selon les paramètres solaires du calendrier; Sof Shema, Sof Tefila et Plag selon le Gra; Tset à 7,083°. Heures arrondies à la minute. Entrée et sortie de Chabbat : Hebcal, 20–21 novembre 2026."
+  "zmanimSource": "Neuilly-sur-Seine, coordonnées GeoNames; calculs solaires Hebcal. Sof Shema, Sof Tefila et Plag selon le Gra; Tset à 7,083°. Heures arrondies à la minute. Source des zmanim : API Hebcal (licence CC BY 4.0). Horaires du programme conservés pour modification ultérieure."
 }
