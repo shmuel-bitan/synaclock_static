@@ -87,7 +87,7 @@
         {
           "time": "17:56",
           "name": "Arvit",
-          "note": "suivi de levana si visible"
+          "note": ""
         }
       ]
     },
@@ -105,6 +105,7 @@
   ],
   "slides": [
     { "title": "histoire", "url": "./images/slide-00.jpg", "seconds": 5 },
+    { "title": "hannouka", "url": "./images/slide-04.jpg", "seconds": 5 },
     { "title": "Chabbat", "url": "./images/chabbat.jpg", "seconds": 5 },
     { "title": "Bâtisseurs", "url": "./images/slide-01.jpg", "seconds": 5 },
     { "title": "Keteub", "url": "./images/slide-02.png", "seconds": 5 },
